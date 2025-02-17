@@ -1,7 +1,10 @@
+# Projeto em desenvolvimento!
+
 # Exoplanets Classification & Incremental Learning Pipeline
 
-Este repositório contém um pipeline completo de Machine Learning para a classificação de exoplanetas, abrangendo desde a exploração dos dados até a geração de dashboards e treinamento incremental. O projeto demonstra boas práticas em pré-processamento, engenharia de features, otimização de hiperparâmetros, rastreamento com logging, exportação de modelos e predição para novos dados.
+Este projeto é um estudo em desenvolvimento focado na utilização de Machine Learning para prever trânsitos exoplanetários. O objetivo principal é explorar os dados do NASA Exoplanet Archive, com foco na identificação de exoplanetas candidatos e confirmados, e no aprimoramento de modelos de aprendizado de máquina para essa tarefa.
 
+Atualmente, o projeto está em andamento, sendo constantemente aprimorado e ajustado para melhorar os resultados e explorar novas abordagens.
 ---
 
 ## Funcionalidades
