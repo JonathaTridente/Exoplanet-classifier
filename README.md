@@ -1,41 +1,52 @@
 # Exoplanets Classification & Incremental Learning Pipeline
 
-Este repositório contém um pipeline completo de Machine Learning para classificação de exoplanetas, desde a exploração dos dados até a geração de dashboards e treinamento incremental. O projeto demonstra boas práticas de pré-processamento, engenharia de features, otimização de hiperparâmetros, rastreamento com logging, exportação de modelos e predição para novos dados.
+Este repositório contém um pipeline completo de Machine Learning para a classificação de exoplanetas, abrangendo desde a exploração dos dados até a geração de dashboards e treinamento incremental. O projeto demonstra boas práticas em pré-processamento, engenharia de features, otimização de hiperparâmetros, rastreamento com logging, exportação de modelos e predição para novos dados.
+
+---
 
 ## Funcionalidades
 
-- **Exploração de Dados (EDA):**
-  - Carregamento e inspeção dos dados.
-  - Visualizações: histogramas e contagem de classes.
+### Exploração de Dados (EDA)
+- **Carregamento e Inspeção dos Dados:**  
+  Importa os dados diretamente da API da NASA e realiza a inspeção inicial.
+- **Visualizações:**  
+  Geração de histogramas, contagem de classes e outras visualizações para melhor entendimento dos dados.
 
-- **Pré-processamento e Engenharia de Features:**
-  - Separação de colunas numéricas e categóricas com `ColumnTransformer`.
-  - Imputação, escalonamento e codificação one-hot.
+### Pré-processamento e Engenharia de Features
+- **Transformações Avançadas:**  
+  Separação de colunas numéricas e categóricas utilizando `ColumnTransformer`.
+- **Tratamento de Dados Faltantes:**  
+  Imputação de valores ausentes e escalonamento dos dados.
+- **Codificação:**  
+  Utilização de One-Hot Encoding para variáveis categóricas e Label Encoding para o alvo.
+- **Discretização:**  
+  Conversão de variáveis contínuas (ex.: período orbital) em categorias para facilitar a classificação.
 
-- **Treinamento e Otimização de Modelos:**
-  - Treinamento de múltiplos modelos (Logistic Regression, Random Forest e XGBoost).
-  - Otimização de hiperparâmetros com `RandomizedSearchCV` e validação cruzada estratificada.
-  - Seleção do melhor modelo com base em acurácia.
+### Treinamento e Otimização de Modelos
+- **Modelos Implementados:**  
+  - Logistic Regression  
+  - Random Forest  
+  - XGBoost  
+- **Otimização de Hiperparâmetros:**  
+  Uso de `RandomizedSearchCV` com validação cruzada (estratificada ou KFold, conforme a distribuição dos dados).
+- **Seleção do Melhor Modelo:**  
+  Comparação de modelos com base na acurácia e outras métricas de performance.
 
-- **Dashboard de Resultados:**
-  - Geração de relatório HTML contendo os principais resultados e a matriz de confusão.
+### Dashboard de Resultados
+- **Relatórios e Visualizações:**  
+  Geração de relatórios em HTML com os principais resultados, métricas e matrizes de confusão.
 
-- **Treinamento Incremental:**
-  - Uso de `SGDClassifier` com `partial_fit` para atualização contínua do modelo.
-  - Função para atualizar o modelo com novos dados.
+### Treinamento Incremental
+- **Atualização Contínua do Modelo:**  
+  Implementação de treinamento incremental utilizando `SGDClassifier` com `partial_fit`, permitindo que o modelo seja atualizado à medida que novos dados chegam.
 
-- **Exportação e Predição:**
-  - Exportação dos modelos treinados utilizando `joblib`.
-  - Função para realizar predições em novos datasets e salvar os resultados em CSV.
+### Exportação e Predição
+- **Exportação dos Modelos:**  
+  Salvamento dos modelos treinados utilizando `joblib`.
+- **Predição para Novos Dados:**  
+  Função para realizar predições em novos datasets e salvar os resultados em CSV.
 
-## Estrutura do Repositório
-
-. ├── README.md ├── main.py ├── requirements.txt └── data └── transits_0130135810_2025_30_01.csv
-
-
-- **main.py:** Código principal do projeto.
-- **requirements.txt:** Lista de dependências necessárias.
-- **data:** Pasta para armazenar os arquivos CSV com os dados.
+---
 
 ## Instalação
 
@@ -70,4 +81,13 @@ Contribuições são bem-vindas! Se você encontrar algum bug ou tiver sugestõe
 Licença
 Este projeto está licenciado sob a MIT License.
 
+## Estrutura do Repositório
+
+```plaintext
+.
+├── README.md              # Este arquivo de documentação
+├── main.py                # Código principal do pipeline
+├── requirements.txt       # Lista de dependências do projeto
+└── data
+    └── transits_0130135810_2025_30_01.csv   # Arquivo CSV de exemplo para os dados
 
